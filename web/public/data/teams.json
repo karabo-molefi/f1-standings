@@ -1,0 +1,62 @@
+[
+    {
+        "team_position":1,
+        "team_name":"McLaren Racing",
+        "team_points":666,
+        "team_wins":"6"
+    },
+    {
+        "team_position":2,
+        "team_name":"Scuderia Ferrari",
+        "team_points":652,
+        "team_wins":"5"
+    },
+    {
+        "team_position":3,
+        "team_name":"Red Bull Racing",
+        "team_points":589,
+        "team_wins":"9"
+    },
+    {
+        "team_position":4,
+        "team_name":"Mercedes-AMG Petronas",
+        "team_points":468,
+        "team_wins":"4"
+    },
+    {
+        "team_position":5,
+        "team_name":"Aston Martin F1 Team",
+        "team_points":94,
+        "team_wins":"0"
+    },
+    {
+        "team_position":6,
+        "team_name":"Alpine F1 Team",
+        "team_points":65,
+        "team_wins":"0"
+    },
+    {
+        "team_position":7,
+        "team_name":"Haas F1 Team",
+        "team_points":58,
+        "team_wins":"0"
+    },
+    {
+        "team_position":8,
+        "team_name":"Racing Bulls",
+        "team_points":46,
+        "team_wins":"0"
+    },
+    {
+        "team_position":9,
+        "team_name":"Williams F1 Team",
+        "team_points":17,
+        "team_wins":"0"
+    },
+    {
+        "team_position":10,
+        "team_name":"Stake F1 Team Kick Sauber",
+        "team_points":4,
+        "team_wins":"0"
+    }
+]
