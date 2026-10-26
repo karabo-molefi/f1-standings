@@ -1,0 +1,146 @@
+[
+    {
+        "driver_position":1,
+        "driver_name":"Max Verstappen",
+        "driver_points":437,
+        "driver_wins":9
+    },
+    {
+        "driver_position":2,
+        "driver_name":"Lando Norris",
+        "driver_points":374,
+        "driver_wins":4
+    },
+    {
+        "driver_position":3,
+        "driver_name":"Charles Leclerc",
+        "driver_points":356,
+        "driver_wins":3
+    },
+    {
+        "driver_position":4,
+        "driver_name":"Oscar Piastri",
+        "driver_points":292,
+        "driver_wins":2
+    },
+    {
+        "driver_position":5,
+        "driver_name":"Carlos Sainz Jr",
+        "driver_points":290,
+        "driver_wins":2
+    },
+    {
+        "driver_position":6,
+        "driver_name":"George Russell",
+        "driver_points":245,
+        "driver_wins":2
+    },
+    {
+        "driver_position":7,
+        "driver_name":"Lewis Hamilton",
+        "driver_points":223,
+        "driver_wins":2
+    },
+    {
+        "driver_position":8,
+        "driver_name":"Sergio Perez",
+        "driver_points":152,
+        "driver_wins":0
+    },
+    {
+        "driver_position":9,
+        "driver_name":"Fernando Alonso",
+        "driver_points":70,
+        "driver_wins":0
+    },
+    {
+        "driver_position":10,
+        "driver_name":"Pierre Gasly",
+        "driver_points":42,
+        "driver_wins":0
+    },
+    {
+        "driver_position":11,
+        "driver_name":"Nico Hulkenberg",
+        "driver_points":41,
+        "driver_wins":0
+    },
+    {
+        "driver_position":12,
+        "driver_name":"Yuki Tsunoda",
+        "driver_points":30,
+        "driver_wins":0
+    },
+    {
+        "driver_position":13,
+        "driver_name":"Lance Stroll",
+        "driver_points":24,
+        "driver_wins":0
+    },
+    {
+        "driver_position":14,
+        "driver_name":"Esteban Ocon",
+        "driver_points":23,
+        "driver_wins":0
+    },
+    {
+        "driver_position":15,
+        "driver_name":"Kevin Magnussen",
+        "driver_points":16,
+        "driver_wins":0
+    },
+    {
+        "driver_position":16,
+        "driver_name":"Alexander Albon",
+        "driver_points":12,
+        "driver_wins":0
+    },
+    {
+        "driver_position":17,
+        "driver_name":"Daniel Ricciardo",
+        "driver_points":12,
+        "driver_wins":0
+    },
+    {
+        "driver_position":18,
+        "driver_name":"Oliver Bearman",
+        "driver_points":7,
+        "driver_wins":0
+    },
+    {
+        "driver_position":19,
+        "driver_name":"Franco Colapinto",
+        "driver_points":5,
+        "driver_wins":0
+    },
+    {
+        "driver_position":20,
+        "driver_name":"Guanyu Zhou",
+        "driver_points":4,
+        "driver_wins":0
+    },
+    {
+        "driver_position":21,
+        "driver_name":"Liam Lawson",
+        "driver_points":4,
+        "driver_wins":0
+    },
+    {
+        "driver_position":22,
+        "driver_name":"Valtteri Bottas",
+        "driver_points":0,
+        "driver_wins":0
+    },
+    {
+        "driver_position":23,
+        "driver_name":"Logan Sargeant",
+        "driver_points":0,
+        "driver_wins":0
+    },
+    {
+        "driver_position":24,
+        "driver_name":"Jack Doohan",
+        "driver_points":0,
+        "driver_wins":0
+    }
+]
