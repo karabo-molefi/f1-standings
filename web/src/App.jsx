@@ -1,6 +1,6 @@
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
 
-const BASE = import.meta.env.BASE_URL;
+const BASE = import.meta.env.BASE_URL.replace(/\/?$/, "/");
 const SEASON = 2024;
 
 const TABS = [
@@ -40,32 +40,51 @@ export default function App() {
   const [tab, setTab] = useState("drivers");
   const [data, setData] = useState({});
   const [status, setStatus] = useState("loading");
+  const [error, setError] = useState("");
   const [height, setHeight] = useState(null);
   const innerRef = useRef(null);
 
   // Load both files once so switching tabs is instant.
-  useEffect(() => {
-    let cancelled = false;
-    Promise.all(
-      TABS.map((t) =>
-        fetch(`${BASE}${t.file}`)
-          .then((r) => {
-            if (!r.ok) throw new Error(r.status);
-            return r.json();
-          })
-          .then((rows) => [t.key, rows.map(t.map)])
-      )
-    )
-      .then((entries) => {
-        if (cancelled) return;
-        setData(Object.fromEntries(entries));
-        setStatus("ready");
-      })
-      .catch(() => !cancelled && setStatus("error"));
-    return () => {
-      cancelled = true;
-    };
-  }, []);
+useEffect(() => {
+  let cancelled = false;
+  Promise.all(
+    TABS.map(async (t) => {
+      const url = `${BASE}${t.file}`;
+      let res;
+      try {
+        res = await fetch(url, { cache: "no-store" });
+      } catch (e) {
+        throw new Error(`${t.file}: network error (${e.message})`);
+      }
+      if (!res.ok) throw new Error(`${t.file}: HTTP ${res.status}`);
+      // pandas can write NaN, which isn't valid JSON, so treat it as null.
+      const text = (await res.text()).replace(/\bNaN\b/g, "null");
+      let rows;
+      try {
+        rows = JSON.parse(text);
+      } catch (e) {
+        throw new Error(`${t.file}: invalid JSON (${e.message})`);
+      }
+      if (!Array.isArray(rows)) throw new Error(`${t.file}: expected a JSON array`);
+      return [t.key, rows.map(t.map)];
+    })
+  )
+    .then((entries) => {
+      if (cancelled) return;
+      setData(Object.fromEntries(entries));
+      setStatus("ready");
+    })
+    .catch((e) => {
+      if (cancelled) return;
+      console.error("Failed to load standings:", e);
+      setError(e.message);
+      setStatus("error");
+    });
+  return () => {
+    cancelled = true;
+  };
+}, []);
+    
 
   // Track the natural height of the table so the wrapper can animate to it.
   useLayoutEffect(() => {
@@ -108,10 +127,9 @@ export default function App() {
       <section className="body" id="standings-panel" role="tabpanel" aria-labelledby={`tab-${tab}`}>
         <h2>{SEASON} Standings</h2>
 
-        {status === "loading" && <p className="msg">Loading standings…</p>}
         {status === "error" && (
-          <p className="msg">Couldn’t load standings. Check that the JSON files exist in public/data.</p>
-        )}
+  <p className="msg">Couldn’t load standings. {error}</p>)}
+
 
         {status === "ready" && (
           <div className="reveal" style={height != null ? { height } : undefined}>
